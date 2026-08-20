@@ -9,7 +9,7 @@ export default function PageHero({
 }) {
   return (
     <section className="relative overflow-hidden bg-brand-ink py-20">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(210,35,42,0.35),transparent_60%)]" />
+      {/* <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(210,35,42,0.35),transparent_60%)]" /> */}
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
         <p className="font-display text-sm uppercase tracking-widest text-brand-gold">
           {eyebrow}

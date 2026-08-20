@@ -9,9 +9,9 @@ export default function WaveDivider({
   return (
     <div
       aria-hidden
-      className={`pointer-events-none w-full overflow-hidden ${flip ? "-scale-x-100" : ""} ${className}`}
+      className={` w-full overflow-hidden ${flip ? "-scale-x-100" : ""} ${className}`}
     >
-      <svg
+      {/* <svg
         viewBox="0 0 1600 160"
         preserveAspectRatio="none"
         className="h-16 w-full sm:h-24"
@@ -53,7 +53,7 @@ export default function WaveDivider({
           opacity="0.6"
           d="M800,118 C970,90 1070,158 1260,112 C1420,78 1520,94 1610,54"
         />
-      </svg>
+      </svg> */}
     </div>
   );
 }

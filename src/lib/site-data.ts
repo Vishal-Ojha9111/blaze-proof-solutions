@@ -10,8 +10,61 @@ export const site = {
 export const navLinks = [
   { href: "/", label: "Home" },
   { href: "/products", label: "Products" },
+  { href: "/services", label: "Services" },
   { href: "/about", label: "About Us" },
   { href: "/contact", label: "Contact" },
+];
+
+export type Service = {
+  slug: string;
+  title: string;
+  description: string;
+  image: string;
+};
+
+export const services: Service[] = [
+  {
+    slug: "fire-noc",
+    title: "Fire NOC Services",
+    description:
+      "End-to-end assistance in obtaining Fire No Objection Certificates, from documentation to liaising with fire department authorities.",
+    image: "/images/products/fire-noc-service.png",
+  },
+  {
+    slug: "fire-alarm-system",
+    title: "Fire Alarm System",
+    description:
+      "Design, installation, and wiring of fire detection and alarm systems, including smoke detectors, sounders, and control panels.",
+    image: "/images/products/fire-alarm-system-installation.png",
+  },
+  {
+    slug: "fire-safety-audit",
+    title: "Fire Safety Audit",
+    description:
+      "Comprehensive on-site audits covering fire hazard identification, detection systems, suppression systems, and passive fire protection.",
+    image: "/images/products/1100x756-fir-safety-audit.png",
+  },
+  {
+    slug: "fire-hydrant-system",
+    title: "Fire Hydrant & Fighting System",
+    description:
+      "Supply and installation of fire hydrant systems, hose cabinets, and water-based fire fighting equipment for commercial and industrial sites.",
+    image: "/images/products/fire-extinguisher-water-pump-system-wall-powerful-emergency-equipment-apartment-hotel.jpg",
+  },
+  {
+    slug: "cctv-surveillance",
+    title: "CCTV Surveillance",
+    description:
+      "Planning and installation of CCTV camera systems with remote monitoring for homes, offices, and industrial facilities.",
+    image: "/images/products/cctv-installation.jpg",
+  },
+  {
+    slug: "access-control",
+    title: "Access Control System",
+    description:
+      "Card and biometric access control installation to secure entry points and manage access across your premises.",
+    image: "/images/products/access-control-1.jpg",
+  },
 ];
 
 export type Product = {
