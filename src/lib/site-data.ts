@@ -2,7 +2,7 @@ export const site = {
   name: "Blaze Proof Solution",
   tagline: "Alert Today, Alive Tomorrow...",
   email: "blazeproofsolution12@gmail.com",
-  phones: ["8839953161", "7999573895"],
+  phones: ["7999573895","8839953161"],
   address: "150/4, Chikitsak Nagar, Mahalaxmi Nagar Road, Vijay Nagar Road, Indore",
   certification: "ISO 9001:2015 Certified Company",
 };
