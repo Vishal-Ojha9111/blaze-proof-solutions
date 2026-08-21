@@ -28,7 +28,41 @@ export async function submitContactForm(
     return { status: "error", message: "Please enter a valid email address." };
   }
 
+  const googleSheetsWebhookUrl = process.env.GOOGLE_SHEETS_WEBHOOK_URL;
+  const googleSheetsWebhookSecret = process.env.GOOGLE_SHEETS_WEBHOOK_SECRET;
   const resendApiKey = process.env.RESEND_API_KEY;
+  let delivered = false;
+
+  if (googleSheetsWebhookUrl) {
+    try {
+      const sheetsResponse = await fetch(googleSheetsWebhookUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          phone,
+          email,
+          message,
+          submittedAt: new Date().toISOString(),
+          secret: googleSheetsWebhookSecret,
+        }),
+      });
+
+      if (!sheetsResponse.ok) {
+        return {
+          status: "error",
+          message: "We could not save your enquiry. Please call us instead.",
+        };
+      }
+
+      delivered = true;
+    } catch {
+      return {
+        status: "error",
+        message: "We could not save your enquiry. Please call us instead.",
+      };
+    }
+  }
 
   if (resendApiKey) {
     let res: Response;
@@ -61,10 +95,14 @@ export async function submitContactForm(
         message: "Something went wrong sending your message. Please call us instead.",
       };
     }
-  } else {
+
+    delivered = true;
+  }
+
+  if (!delivered) {
     return {
       status: "error",
-      message: "Online enquiries are temporarily unavailable. Please call us instead.",
+      message: "Online enquiries are not configured yet. Please call us instead.",
     };
   }
 
