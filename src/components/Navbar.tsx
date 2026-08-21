@@ -32,6 +32,7 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
+                aria-current={active ? "page" : undefined}
                 className={`font-display text-sm uppercase tracking-wide transition-colors ${
                   active ? "text-brand-red" : "text-brand-ink/80 hover:text-brand-red"
                 }`}
@@ -43,6 +44,12 @@ export default function Navbar() {
         </nav>
 
         <div className="hidden items-center gap-2 md:flex">
+          <Link
+            href="/contact"
+            className="rounded-full border border-brand-red px-4 py-2 font-display text-sm uppercase tracking-wide text-brand-red transition-colors hover:bg-brand-red hover:text-white"
+          >
+            Request a Site Visit
+          </Link>
           <a
             href={`tel:+91${site.phones[0]}`}
             className="flex items-center gap-2 rounded-full bg-brand-red px-4 py-2 font-display text-sm uppercase tracking-wide text-white transition-colors hover:bg-brand-red-dark"
@@ -70,6 +77,7 @@ export default function Navbar() {
                 key={link.href}
                 href={link.href}
                 onClick={() => setOpen(false)}
+                aria-current={pathname === link.href ? "page" : undefined}
                 className={`rounded-md px-3 py-2 font-display text-sm uppercase tracking-wide ${
                   pathname === link.href
                     ? "bg-brand-red/10 text-brand-red"

@@ -6,6 +6,7 @@ import SectionHeading from "@/components/SectionHeading";
 import {
   installationPhotos,
   productOverview,
+  serviceLifecycle,
   whyChooseUs,
 } from "@/lib/site-data";
 
@@ -59,7 +60,40 @@ export default function Home() {
         </div>
       </section>
 
-
+      <section className="border-y border-black/5 bg-brand-ink py-20 text-white">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <SectionHeading
+            eyebrow="How We Help"
+            title="Fire Safety Across the Facility Lifecycle"
+            description="A practical path from identifying risk to keeping your people and systems prepared."
+            dark
+          />
+          <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            {serviceLifecycle.map((item) => (
+              <div key={item.step} className="border-t border-brand-gold/60 pt-5">
+                <p className="font-display text-sm tracking-widest text-brand-gold">
+                  {item.step}
+                </p>
+                <h3 className="mt-4 font-display text-lg uppercase text-white">
+                  {item.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-white/65">
+                  {item.description}
+                </p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-10">
+            <Link
+              href="/services"
+              className="inline-flex items-center gap-2 rounded-full border border-white/30 px-6 py-3 font-display text-sm uppercase tracking-wide text-white transition-colors hover:border-brand-gold hover:text-brand-gold"
+            >
+              Explore Our Services
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
 
       <section className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
         <SectionHeading

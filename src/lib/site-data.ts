@@ -20,6 +20,7 @@ export type Service = {
   title: string;
   description: string;
   image: string;
+  standards?: string[];
 };
 
 export const services: Service[] = [
@@ -29,6 +30,7 @@ export const services: Service[] = [
     description:
       "End-to-end assistance in obtaining Fire No Objection Certificates, from documentation to liaising with fire department authorities.",
     image: "/images/products/fire-noc-service.png",
+    standards: ["NBC 2016 Part 4"],
   },
   {
     slug: "fire-alarm-system",
@@ -36,6 +38,7 @@ export const services: Service[] = [
     description:
       "Design, installation, and wiring of fire detection and alarm systems, including smoke detectors, sounders, and control panels.",
     image: "/images/products/fire-alarm-system-installation.png",
+    standards: ["IS 2189"],
   },
   {
     slug: "fire-safety-audit",
@@ -43,6 +46,7 @@ export const services: Service[] = [
     description:
       "Comprehensive on-site audits covering fire hazard identification, detection systems, suppression systems, and passive fire protection.",
     image: "/images/products/1100x756-fir-safety-audit.png",
+    standards: ["NBC 2016 Part 4"],
   },
   {
     slug: "fire-hydrant-system",
@@ -50,6 +54,7 @@ export const services: Service[] = [
     description:
       "Supply and installation of fire hydrant systems, hose cabinets, and water-based fire fighting equipment for commercial and industrial sites.",
     image: "/images/products/fire-extinguisher-water-pump-system-wall-powerful-emergency-equipment-apartment-hotel.jpg",
+    standards: ["NBC 2016 Part 4", "IS 12469"],
   },
   {
     slug: "cctv-surveillance",
@@ -67,6 +72,56 @@ export const services: Service[] = [
   },
 ];
 
+export const serviceLifecycle = [
+  {
+    step: "01",
+    title: "Plan & Assess",
+    description:
+      "Review your site, identify fire risks, and recommend practical protection for the building and its occupants.",
+  },
+  {
+    step: "02",
+    title: "Supply & Install",
+    description:
+      "Supply and install fire equipment, alarm systems, and hydrant infrastructure suited to your facility.",
+  },
+  {
+    step: "03",
+    title: "Inspect & Improve",
+    description:
+      "Audit installed systems, identify gaps, and help prepare documentation for ongoing safety responsibilities.",
+  },
+  {
+    step: "04",
+    title: "Maintain & Train",
+    description:
+      "Support refilling, maintenance, and practical staff guidance so your protection stays ready when needed.",
+  },
+];
+
+export const industrySolutions = [
+  {
+    title: "Residential Communities",
+    description:
+      "Equipment, inspections, and practical guidance for housing societies and multi-storey residential buildings.",
+  },
+  {
+    title: "Commercial Facilities",
+    description:
+      "Fire alarm, hydrant, and emergency equipment support for offices, shops, malls, and shared workspaces.",
+  },
+  {
+    title: "Industrial Sites",
+    description:
+      "Site-focused fire protection planning for factories, warehouses, workshops, and operational facilities.",
+  },
+  {
+    title: "Healthcare & Education",
+    description:
+      "Clear, maintainable safety systems for hospitals, clinics, schools, and other occupied institutions.",
+  },
+];
+
 export type Product = {
   slug: string;
   name: string;
@@ -78,6 +133,7 @@ export type ProductCategory = {
   title: string;
   description: string;
   coverImage: string;
+  standards: string[];
   products: Product[];
 };
 
@@ -88,6 +144,7 @@ export const productCategories: ProductCategory[] = [
     description:
       "ISI marked fire hydrant accessories rigorously tested to meet the highest safety standards, ensuring reliable water supply during emergencies.",
     coverImage: "/images/site/p2_fire-fighting-equipment.png",
+    standards: ["IS 5290", "IS 636", "IS 903", "IS 12469"],
     products: [
       { slug: "hose-reel-drum", name: "Hose Reel Drum", image: "/images/products/p4_hose-reel-drum.png" },
       { slug: "fire-hydrant-valve", name: "Fire Hydrant Valve SS/GM", image: "/images/products/p4_fire-hydrant-valve.png" },
@@ -109,6 +166,7 @@ export const productCategories: ProductCategory[] = [
     description:
       "Early detection is crucial in fire safety. Our state-of-the-art fire alarm systems are designed to alert you promptly in case of fire emergencies.",
     coverImage: "/images/site/p2_fire-alarm-system.png",
+    standards: ["IS 2189"],
     products: [
       { slug: "heat-detector", name: "Heat Detector", image: "/images/products/p5_heat-detector.png" },
       { slug: "smoke-detector", name: "Smoke Detector", image: "/images/products/p5_smoke-detector.png" },

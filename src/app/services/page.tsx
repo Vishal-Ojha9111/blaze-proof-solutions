@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
-import { services } from "@/lib/site-data";
+import { industrySolutions, services } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "Services | Blaze Proof Solution",
@@ -48,9 +50,60 @@ export default function ServicesPage() {
                 <p className="mt-2 text-sm leading-relaxed text-brand-ink/70">
                   {service.description}
                 </p>
+                {service.standards && (
+                  <div className="mt-4 flex flex-wrap gap-1.5">
+                    {service.standards.map((standard) => (
+                      <span
+                        key={standard}
+                        className="rounded-full bg-brand-gold/10 px-2.5 py-1 text-[11px] font-medium text-brand-ink/75"
+                      >
+                        {standard}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                <Link
+                  href={`/services/${service.slug}`}
+                  className="mt-5 inline-flex items-center gap-2 font-display text-xs uppercase tracking-wide text-brand-ink/70 transition-colors hover:text-brand-red"
+                >
+                  View service details
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
+                <Link
+                  href="/contact"
+                  className="ml-5 mt-5 inline-flex items-center gap-2 font-display text-xs uppercase tracking-wide text-brand-red transition-colors hover:text-brand-red-dark"
+                >
+                  Request Engineer Call Back
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="border-y border-black/5 bg-brand-cream py-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <SectionHeading
+            eyebrow="Who We Serve"
+            title="Solutions Shaped Around Your Facility"
+            description="The right fire safety approach depends on how your people, equipment, and building operate."
+          />
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {industrySolutions.map((industry) => (
+              <div
+                key={industry.title}
+                className="border-l-2 border-brand-red bg-white p-5 shadow-sm"
+              >
+                <h3 className="font-display text-base uppercase tracking-wide text-brand-ink">
+                  {industry.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-brand-ink/70">
+                  {industry.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </>

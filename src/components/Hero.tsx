@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ShieldCheck, Phone } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 import { site } from "@/lib/site-data";
 
 export default function Hero() {
@@ -38,8 +38,8 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="max-w-2xl font-display text-4xl uppercase leading-tight text-white text-balance sm:text-5xl md:text-6xl"
         >
-          Your Beacon of Safety in{" "}
-          <span className="text-brand-red">Fire Prevention</span> &amp; Control
+          Engineering trust for{" "}
+          <span className="text-brand-red">safer spaces</span>
         </motion.h1>
 
         <motion.p
@@ -57,9 +57,9 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="max-w-xl text-base leading-relaxed text-white/70"
         >
-          We supply and install fire extinguishers, fire hydrant systems, fire
-          alarm systems, ISI marked accessories and PPE, backed by expert
-          advice and reliable after-sales support across Indore.
+          From fire extinguishers and alarm systems to hydrant installations,
+          we help homes, businesses, and facilities choose and maintain the
+          protection they need across Indore.
         </motion.p>
 
         <motion.div
@@ -69,18 +69,17 @@ export default function Hero() {
           className="mt-2 flex flex-wrap gap-4"
         >
           <Link
-            href="/products"
+            href="/contact"
             className="rounded-full bg-brand-red px-7 py-3 font-display text-sm uppercase tracking-wide text-white transition-colors hover:bg-brand-red-dark"
+          >
+            Request a Site Visit
+          </Link>
+          <Link
+            href="/products"
+            className="flex items-center gap-2 rounded-full border border-white/30 px-7 py-3 font-display text-sm uppercase tracking-wide text-white transition-colors hover:bg-white/10"
           >
             Explore Products
           </Link>
-          <a
-            href={`tel:+91${site.phones[0]}`}
-            className="flex items-center gap-2 rounded-full border border-white/30 px-7 py-3 font-display text-sm uppercase tracking-wide text-white transition-colors hover:bg-white/10"
-          >
-            <Phone className="h-4 w-4" />
-            {site.phones[0]}
-          </a>
         </motion.div>
       </div>
     </section>

@@ -34,6 +34,8 @@ export default function ContactForm() {
             id="name"
             name="name"
             required
+            maxLength={100}
+            autoComplete="name"
             className="mt-1 w-full rounded-lg border border-black/10 bg-white px-4 py-2.5 text-sm outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red"
             placeholder="Your name"
           />
@@ -47,6 +49,8 @@ export default function ContactForm() {
             name="phone"
             required
             type="tel"
+            maxLength={30}
+            autoComplete="tel"
             className="mt-1 w-full rounded-lg border border-black/10 bg-white px-4 py-2.5 text-sm outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red"
             placeholder="+91"
           />
@@ -61,6 +65,8 @@ export default function ContactForm() {
           id="email"
           name="email"
           type="email"
+            maxLength={254}
+            autoComplete="email"
           className="mt-1 w-full rounded-lg border border-black/10 bg-white px-4 py-2.5 text-sm outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red"
           placeholder="you@company.com"
         />
@@ -75,6 +81,7 @@ export default function ContactForm() {
           name="message"
           required
           rows={5}
+          maxLength={4000}
           className="mt-1 w-full rounded-lg border border-black/10 bg-white px-4 py-2.5 text-sm outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red"
           placeholder="Tell us what you need..."
         />
@@ -84,6 +91,8 @@ export default function ContactForm() {
 
       {state.status !== "idle" && (
         <div
+          role="status"
+          aria-live="polite"
           className={`flex items-center gap-2 rounded-lg px-4 py-3 text-sm ${
             state.status === "success"
               ? "bg-green-50 text-green-700"
